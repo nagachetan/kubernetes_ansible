@@ -1,0 +1,12 @@
+---
+
+   - name: Kubernetes Node Setup
+     hosts: kubernetes-nodes
+
+     become: true
+
+     roles:
+       - name: Install docker
+         role: ../roles/docker
+       - name: Install Kubernetes Node
+         role: ../roles/kubernetes_nodes

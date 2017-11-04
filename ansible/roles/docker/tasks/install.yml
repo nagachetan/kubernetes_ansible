@@ -1,0 +1,21 @@
+---
+
+  - name: Update apt cache
+    apt: update_cache=yes
+
+  - name: Add key
+    shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+  - name: Add apt repository
+    shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+  - name: Update apt cache
+    apt: update_cache=yes
+
+  - name: Add apt-cache policy
+    shell: apt-cache policy docker-ce
+
+  - name: Install docker CE
+    apt: name=docker-ce state=latest
+
+  - shell: docker ps 

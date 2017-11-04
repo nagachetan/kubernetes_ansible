@@ -1,0 +1,12 @@
+---
+
+   - name: Kubernetes Master Setup
+     hosts: kubernetes-master
+
+     become: true
+
+     roles:
+       - name: Install docker
+         role: ../roles/docker
+       - name: Install Kubernetes Master 
+         role: ../roles/kubernetes-master
