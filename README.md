@@ -18,4 +18,4 @@ Execution Procedure
    $ cd ansible
    $ ansible-playbook -i inventory/hosts playbook/kubernetes-node.yml
 
-Installation will install docker as well
+Installation will also take care of installing docker
